@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}My Releases | Wave-Distro{% endblock %}
+
+{% block content %}
+
+<section class="music-section">
+
+    <div class="music-heading">
+
+        <div>
+            <p class="gold-text">YOUR MUSIC LIBRARY</p>
+            <h1>My Releases</h1>
+        </div>
+
+        <a href="{% url 'upload_release' %}" class="primary-btn">
+            + Upload Music
+        </a>
+
+    </div>
+
+
+    {% if releases %}
+
+        <div class="release-grid">
+
+            {% for release in releases %}
+
+                <div class="release-card">
+
+                    {% if release.artwork %}
+                        <img
+                            src="{{ release.artwork.url }}"
+                            alt="{{ release.title }}"
+                        >
+                    {% endif %}
+
+                    <div class="release-info">
+
+                        <h3>{{ release.title }}</h3>
+
+                        <p>{{ release.release_type }}</p>
+
+                        <p>{{ release.genre }}</p>
+
+                        <span class="release-status">
+                            {{ release.status }}
+                        </span>
+
+                        <a href="{% url 'release_detail' release.pk %}">
+                            Manage Release →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-music">
+
+            <h2>No music uploaded yet.</h2>
+
+            <p>
+                Start your music distribution journey
+                by uploading your first release.
+            </p>
+
+            <a href="{% url 'upload_release' %}" class="primary-btn">
+                Upload Your First Song
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

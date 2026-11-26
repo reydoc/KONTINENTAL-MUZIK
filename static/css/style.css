@@ -1,0 +1,1053 @@
+
+/* GENERAL SETTINGS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+:root {
+    --gold: #d4af37;
+    --black: #080808;
+    --dark: #141414;
+    --white: #ffffff;
+}
+
+
+/* NAVIGATION BAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #101010;
+    border-bottom: 1px solid #292929;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a,
+.login-btn {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.login-btn:hover {
+    color: var(--gold);
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.signup-btn,
+.primary-btn {
+    background: var(--gold);
+    color: #080808;
+    padding: 12px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.signup-btn:hover,
+.primary-btn:hover {
+    background: #f0ca53;
+    transform: translateY(-2px);
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px 10%;
+    background: radial-gradient(circle at 85% 50%, #30250d, #080808 55%);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.gold-text {
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    margin-bottom: 25px;
+}
+
+.hero h1 span,
+.section h2 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    color: #bdbdbd;
+    max-width: 570px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 11px 22px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.secondary-btn:hover {
+    background: var(--gold);
+    color: #080808;
+}
+
+
+/* HERO DECORATION */
+
+.hero-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wave-circle {
+    width: 260px;
+    height: 260px;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 110px;
+    font-weight: bold;
+    color: var(--gold);
+    box-shadow: 0 0 50px #d4af3740;
+}
+
+
+/* GENERAL SECTIONS */
+
+.section {
+    padding: 90px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+.section > p:not(.gold-text) {
+    color: #bdbdbd;
+    max-width: 750px;
+    margin: auto;
+}
+
+
+/* SERVICES */
+
+.services {
+    background: #111111;
+}
+
+.service-container,
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.service-card,
+.pricing-card {
+    background: #1a1a1a;
+    padding: 35px 25px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.service-card:hover,
+.pricing-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.service-card h3,
+.pricing-card h3 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.service-card p,
+.pricing-card p {
+    color: #bdbdbd;
+}
+
+
+/* PRICING */
+
+.pricing-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-card h2 {
+    color: var(--gold);
+    margin: 15px 0;
+}
+
+.pricing-card .secondary-btn,
+.pricing-card .primary-btn {
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.featured {
+    border: 1px solid var(--gold);
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: #101010;
+    text-align: center;
+    padding: 40px 15px;
+    border-top: 1px solid #292929;
+}
+
+.footer h2 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #999999;
+    margin: 8px 0;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 70px 7%;
+    }
+
+    .hero-decoration {
+        display: none;
+    }
+
+    .service-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-buttons {
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 500px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .service-container,
+    .pricing-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section h2 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* AUTHENTICATION PAGES */
+
+.auth-section {
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: radial-gradient(circle at top, #30250d, #080808 60%);
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px;
+    background: #151515;
+    border: 1px solid #3b321c;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px #00000080;
+}
+
+.auth-card h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.auth-description {
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+.auth-card form p {
+    margin-bottom: 17px;
+}
+
+.auth-card label,
+.form-field label {
+    display: block;
+    color: #dddddd;
+    margin-bottom: 7px;
+}
+
+.auth-card input {
+    width: 100%;
+    padding: 13px;
+    background: #090909;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+
+.auth-card input:focus {
+    border-color: var(--gold);
+}
+
+.auth-card .helptext {
+    display: block;
+    color: #999999;
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.auth-card ul.errorlist {
+    color: #ff7777;
+    padding-left: 20px;
+    font-size: 13px;
+}
+
+.auth-submit {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.auth-footer {
+    text-align: center;
+    color: #aaaaaa;
+    margin-top: 25px;
+}
+
+.auth-footer a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.form-error {
+    background: #401c1c;
+    color: #ffaaaa;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 18px;
+}
+
+
+/* ARTIST DASHBOARD */
+
+.dashboard-section {
+    min-height: 650px;
+    padding: 70px 8%;
+}
+
+.dashboard-heading {
+    margin-bottom: 40px;
+}
+
+.dashboard-heading h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.dashboard-heading h1 span {
+    color: var(--gold);
+}
+
+.dashboard-heading p:last-child {
+    color: #aaaaaa;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.dashboard-card {
+    background: #171717;
+    border: 1px solid #383838;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.dashboard-card h3 {
+    color: #aaaaaa;
+    font-size: 15px;
+}
+
+.dashboard-card h2 {
+    color: var(--gold);
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.dashboard-card p {
+    color: #888888;
+}
+
+.dashboard-content,
+.dashboard-actions {
+    background: #151515;
+    padding: 30px;
+    margin-bottom: 25px;
+    border: 1px solid #383838;
+    border-radius: 10px;
+}
+
+.dashboard-content h2,
+.dashboard-actions h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.dashboard-content p {
+    margin-bottom: 12px;
+    color: #cccccc;
+}
+
+.dashboard-actions p {
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.dashboard-actions button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* LOGOUT BUTTON */
+
+.logout-form {
+    display: inline;
+}
+
+.logout-btn {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: var(--gold);
+    color: #080808;
+}
+
+
+/* RESPONSIVE DASHBOARD */
+
+@media (max-width: 700px) {
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-section {
+        padding: 45px 6%;
+    }
+
+    .dashboard-heading h1 {
+        font-size: 27px;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+
+}
+
+.site-message {
+    background: #18351f;
+    color: #a5e6ad;
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+/* MUSIC MANAGEMENT */
+
+.music-section {
+    min-height: 650px;
+    padding: 70px 8%;
+}
+
+.music-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.music-heading h1,
+.music-form-card h1 {
+    font-size: 35px;
+}
+
+.music-form-card {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #151515;
+    border: 1px solid #3b321c;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.music-description {
+    color: #aaaaaa;
+    margin: 12px 0 25px;
+}
+
+.music-form-card form p {
+    margin-bottom: 20px;
+}
+
+.music-form-card label {
+    display: block;
+    color: #dddddd;
+    margin-bottom: 8px;
+}
+
+.music-form-card input,
+.music-form-card select {
+    width: 100%;
+    padding: 13px;
+    background: #090909;
+    color: white;
+    border: 1px solid #444444;
+    border-radius: 5px;
+}
+
+.music-form-card input:focus,
+.music-form-card select:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.music-form-card .errorlist {
+    color: #ff7777;
+    padding-left: 20px;
+}
+
+
+/* RELEASE CARDS */
+
+.release-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.release-card {
+    background: #171717;
+    border: 1px solid #383838;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.release-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-5px);
+}
+
+.release-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.release-info {
+    padding: 22px;
+}
+
+.release-info h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.release-info p {
+    color: #aaaaaa;
+    margin-bottom: 7px;
+}
+
+.release-status {
+    display: inline-block;
+    background: #30250d;
+    color: var(--gold);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin: 12px 0;
+}
+
+.release-info a {
+    display: block;
+    color: var(--gold);
+    text-decoration: none;
+    margin-top: 12px;
+}
+
+
+/* EMPTY MUSIC LIBRARY */
+
+.empty-music {
+    text-align: center;
+    padding: 90px 20px;
+    background: #151515;
+    border: 1px dashed #555555;
+    border-radius: 12px;
+}
+
+.empty-music h2 {
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.empty-music p {
+    color: #aaaaaa;
+    margin-bottom: 25px;
+}
+
+
+/* RELEASE DETAILS */
+
+.release-detail {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    background: #151515;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #383838;
+}
+
+.detail-artwork {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.detail-information h1 {
+    color: var(--gold);
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.detail-information p {
+    color: #bbbbbb;
+    margin-bottom: 10px;
+}
+
+
+/* TRACK LIST */
+
+.track-section {
+    margin-top: 45px;
+}
+
+.track-section h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.track-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #151515;
+    border-bottom: 1px solid #333333;
+}
+
+.track-row h3 {
+    color: white;
+}
+
+.track-row p {
+    color: #999999;
+    font-size: 13px;
+}
+
+.track-row > span:last-child {
+    margin-left: auto;
+    color: var(--gold);
+    font-size: 13px;
+}
+
+.release-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+
+/* RESPONSIVE MUSIC PAGES */
+
+@media (max-width: 850px) {
+
+    .release-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .release-detail {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .music-section {
+        padding: 45px 5%;
+    }
+
+    .music-heading {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .release-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .music-form-card {
+        padding: 25px;
+    }
+
+    .detail-artwork {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+    }
+
+    .track-row {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+
+/* ADMINISTRATOR DASHBOARD */
+
+.admin-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto;
+    color: #ffffff;
+}
+
+.admin-heading {
+    margin-bottom: 35px;
+}
+
+.admin-heading h1 {
+    color: #d4af37;
+    font-size: 32px;
+}
+
+.admin-heading p {
+    color: #bbbbbb;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 20px;
+}
+
+.admin-stat-card {
+    background: #171717;
+    border: 1px solid #333333;
+    border-left: 4px solid #d4af37;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.admin-stat-card h3 {
+    color: #bbbbbb;
+    font-size: 15px;
+}
+
+.admin-stat-card p {
+    color: #d4af37;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.admin-navigation {
+    margin-top: 45px;
+}
+
+.admin-navigation h2,
+.admin-recent h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.admin-navigation a {
+    display: inline-block;
+    background: #d4af37;
+    color: #000000;
+    padding: 13px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-release-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background: #171717;
+    border: 1px solid #333333;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 7px;
+}
+
+.admin-release-row h3 {
+    color: #ffffff;
+}
+
+.admin-release-row p {
+    color: #aaaaaa;
+}
+
+.admin-release-row a,
+.admin-table a {
+    color: #d4af37;
+    text-decoration: none;
+}
+
+.admin-table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #171717;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px;
+    border-bottom: 1px solid #333333;
+    text-align: left;
+}
+
+.admin-table th {
+    color: #d4af37;
+}
+
+.admin-table td {
+    color: #eeeeee;
+}
+
+.review-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: #171717;
+    padding: 25px;
+    border-radius: 8px;
+}
+
+.review-artwork {
+    width: 220px;
+    max-width: 40%;
+    border-radius: 8px;
+}
+
+.review-information h2 {
+    color: #d4af37;
+}
+
+.review-information p {
+    color: #cccccc;
+}
+
+.review-tracks {
+    margin-top: 40px;
+}
+
+.review-tracks h2 {
+    color: #d4af37;
+}
+
+.review-track {
+    background: #171717;
+    border: 1px solid #333333;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+}
+
+.review-track audio {
+    width: 100%;
+    max-width: 450px;
+    margin-top: 10px;
+}
+
+.review-actions {
+    margin-top: 30px;
+}
+
+.approve-btn,
+.reject-btn {
+    padding: 13px 22px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.approve-btn {
+    background: #d4af37;
+    color: #000000;
+}
+
+.reject-btn {
+    background: #a52a2a;
+    color: #ffffff;
+}
+
+@media (max-width: 650px) {
+    .review-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .review-artwork {
+        max-width: 100%;
+        width: 180px;
+    }
+
+    .admin-release-row {
+        flex-wrap: wrap;
+    }
+}

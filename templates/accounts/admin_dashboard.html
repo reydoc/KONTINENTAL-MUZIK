@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="admin-section">
+
+    <div class="admin-heading">
+        <h1>Administrator Dashboard</h1>
+        <p>Welcome to the Wave-Distro management centre.</p>
+    </div>
+
+    <div class="admin-stats">
+
+        <div class="admin-stat-card">
+            <h3>Total Artists</h3>
+            <p>{{ total_artists }}</p>
+        </div>
+
+        <div class="admin-stat-card">
+            <h3>Total Releases</h3>
+            <p>{{ total_releases }}</p>
+        </div>
+
+        <div class="admin-stat-card">
+            <h3>Pending Review</h3>
+            <p>{{ pending_releases }}</p>
+        </div>
+
+        <div class="admin-stat-card">
+            <h3>Approved Releases</h3>
+            <p>{{ approved_releases }}</p>
+        </div>
+
+        <div class="admin-stat-card">
+            <h3>Rejected Releases</h3>
+            <p>{{ rejected_releases }}</p>
+        </div>
+
+    </div>
+
+    <div class="admin-navigation">
+        <h2>Management</h2>
+
+        <a href="{% url 'admin_artists' %}">
+            Manage Artists
+        </a>
+
+        <a href="{% url 'admin_releases' %}">
+            Manage Music Releases
+        </a>
+    </div>
+
+    <div class="admin-recent">
+
+        <h2>Recently Uploaded Releases</h2>
+
+        {% for release in recent_releases %}
+
+            <div class="admin-release-row">
+
+                <div>
+                    <h3>{{ release.title }}</h3>
+                    <p>{{ release.artist.artist_name }}</p>
+                </div>
+
+                <span>{{ release.status }}</span>
+
+                <a href="{% url 'review_release' release.pk %}">
+                    Review
+                </a>
+
+            </div>
+
+        {% empty %}
+
+            <p>No music releases have been uploaded yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

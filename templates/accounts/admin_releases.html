@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="admin-section">
+
+    <div class="admin-heading">
+        <h1>Music Releases</h1>
+        <p>Review and manage music submitted by artists.</p>
+    </div>
+
+    <div class="admin-table-wrapper">
+
+        <table class="admin-table">
+
+            <thead>
+                <tr>
+                    <th>Artwork</th>
+                    <th>Release Title</th>
+                    <th>Artist</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for release in releases %}
+
+                    <tr>
+
+                        <td>
+                            <img
+                                src="{{ release.artwork.url }}"
+                                width="55"
+                                alt="{{ release.title }}"
+                            >
+                        </td>
+
+                        <td>{{ release.title }}</td>
+
+                        <td>{{ release.artist.artist_name }}</td>
+
+                        <td>{{ release.release_type }}</td>
+
+                        <td>{{ release.status }}</td>
+
+                        <td>
+                            <a href="{% url 'review_release' release.pk %}">
+                                Review
+                            </a>
+                        </td>
+
+                    </tr>
+
+                {% empty %}
+
+                    <tr>
+                        <td colspan="6">
+                            No releases found.
+                        </td>
+                    </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="admin-section">
+
+    <div class="admin-heading">
+        <h1>Review Music Release</h1>
+        <p>Examine the release details before making a decision.</p>
+    </div>
+
+    <div class="review-card">
+
+        <img
+            src="{{ release.artwork.url }}"
+            class="review-artwork"
+            alt="{{ release.title }}"
+        >
+
+        <div class="review-information">
+
+            <h2>{{ release.title }}</h2>
+
+            <p>
+                <strong>Artist:</strong>
+                {{ release.artist.artist_name }}
+            </p>
+
+            <p>
+                <strong>Release Type:</strong>
+                {{ release.release_type }}
+            </p>
+
+            <p>
+                <strong>Genre:</strong>
+                {{ release.genre }}
+            </p>
+
+            <p>
+                <strong>Release Date:</strong>
+                {{ release.release_date }}
+            </p>
+
+            <p>
+                <strong>Status:</strong>
+                {{ release.status }}
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="review-tracks">
+
+        <h2>Submitted Tracks</h2>
+
+        {% for track in tracks %}
+
+            <div class="review-track">
+
+                <h3>
+                    {{ track.track_number }}.
+                    {{ track.track_title }}
+                </h3>
+
+                <p>Producer: {{ track.producer|default:"Not specified" }}</p>
+
+                <p>
+                    Featured Artists:
+                    {{ track.featured_artists|default:"None" }}
+                </p>
+
+                <audio controls preload="none">
+                    <source
+                        src="{{ track.audio_file.url }}"
+                        type="audio/mpeg"
+                    >
+                    Your browser does not support audio playback.
+                </audio>
+
+            </div>
+
+        {% empty %}
+
+            <p>No tracks have been added.</p>
+
+        {% endfor %}
+
+    </div>
+
+    {% if release.status == 'Pending Review' %}
+
+        <div class="review-actions">
+
+            <form
+                method="POST"
+                action="{% url 'update_release_status' release.pk %}"
+            >
+                {% csrf_token %}
+
+                <button
+                    type="submit"
+                    name="action"
+                    value="approve"
+                    class="approve-btn"
+                >
+                    Approve Release
+                </button>
+
+                <button
+                    type="submit"
+                    name="action"
+                    value="reject"
+                    class="reject-btn"
+                >
+                    Reject Release
+                </button>
+
+            </form>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

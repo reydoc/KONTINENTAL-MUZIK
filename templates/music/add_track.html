@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Track | Wave-Distro{% endblock %}
+
+{% block content %}
+
+<section class="music-section">
+
+    <div class="music-form-card">
+
+        <p class="gold-text">ADD MUSIC</p>
+
+        <h1>Add Track to {{ release.title }}</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="primary-btn">
+                Upload Track
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

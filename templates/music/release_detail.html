@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ release.title }} | Wave-Distro{% endblock %}
+
+{% block content %}
+
+<section class="music-section">
+
+    <div class="release-detail">
+
+        {% if release.artwork %}
+            <img
+                src="{{ release.artwork.url }}"
+                alt="{{ release.title }}"
+                class="detail-artwork"
+            >
+        {% endif %}
+
+        <div class="detail-information">
+
+            <p class="gold-text">RELEASE INFORMATION</p>
+
+            <h1>{{ release.title }}</h1>
+
+            <p>Type: {{ release.release_type }}</p>
+
+            <p>Genre: {{ release.genre }}</p>
+
+            <p>Release Date: {{ release.release_date }}</p>
+
+            <p>Status: {{ release.status }}</p>
+
+            <p>Artist: {{ release.artist.artist_name }}</p>
+
+        </div>
+
+    </div>
+
+
+    <div class="track-section">
+
+        <h2>Track List</h2>
+
+        {% if tracks %}
+
+            {% for track in tracks %}
+
+                <div class="track-row">
+
+                    <span>{{ track.track_number }}.</span>
+
+                    <div>
+                        <h3>{{ track.track_title }}</h3>
+
+                        <p>
+                            Featured: {{ track.featured_artists|default:"None" }}
+                        </p>
+
+                        <p>
+                            Producer: {{ track.producer|default:"Not specified" }}
+                        </p>
+                    </div>
+
+                    <span>Audio uploaded</span>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>No tracks have been added yet.</p>
+
+        {% endif %}
+
+
+        {% if release.status == 'Draft' %}
+
+            <div class="release-actions">
+
+                <a
+                    href="{% url 'add_track' release.pk %}"
+                    class="secondary-btn"
+                >
+                    + Add Track
+                </a>
+
+                <form
+                    method="POST"
+                    action="{% url 'submit_release' release.pk %}"
+                >
+
+                    {% csrf_token %}
+
+                    <button type="submit" class="primary-btn">
+                        Submit For Review
+                    </button>
+
+                </form>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}
